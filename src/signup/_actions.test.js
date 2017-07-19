@@ -18,11 +18,12 @@ describe('Signup Actions', () => {
             const action = await actions.confirmSsn()(dispatch, getState);
             expect(global.fetch.mock.calls).toHaveLength(1);
             expect(global.fetch.mock.calls[0][1]).toHaveProperty('body', JSON.stringify(signupState.signup));
-            expect(dispatch.mock.calls).toHaveLength(2);
-            expect(dispatch.mock.calls[0][0]).toHaveProperty('type', types.SET_ADDRESS);
-            expect(dispatch.mock.calls[0][0].payload).toHaveProperty('address', address);
-            expect(dispatch.mock.calls[1][0]).toHaveProperty('type', types.SET_SSN_VALIDITY);
-            expect(dispatch.mock.calls[1][0].payload).toHaveProperty('isSsnValid', true);
+            expect(dispatch.mock.calls).toHaveLength(4);
+            expect(dispatch.mock.calls[0][0]).toHaveProperty('type', types.SET_LOADING_STATE);
+            expect(dispatch.mock.calls[1][0]).toHaveProperty('type', types.SET_ADDRESS);
+            expect(dispatch.mock.calls[1][0].payload).toHaveProperty('address', address);
+            expect(dispatch.mock.calls[2][0]).toHaveProperty('type', types.SET_SSN_VALIDITY);
+            expect(dispatch.mock.calls[2][0].payload).toHaveProperty('isSsnValid', true);
         });
     });
     describe('Other Actions', () => {
