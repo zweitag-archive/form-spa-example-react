@@ -6,6 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 // API ACTIONS
 export function confirmSsn() {
     return async (dispatch, getState) => {
+        dispatch(setLoadingState(true));
         const ssn = getState().signup.ssn;
         const body = JSON.stringify({ ssn });
 
@@ -21,6 +22,7 @@ export function confirmSsn() {
             dispatch(setAddress(json));
             dispatch(setSsnValidity(true));
         }
+        dispatch(setLoadingState(false));
     };
 }
 
@@ -35,6 +37,13 @@ function setAddress(address) {
     return {
         type: t.SET_ADDRESS,
         payload: { address },
+    };
+}
+
+function setLoadingState(isLoading) {
+    return {
+        type: t.SET_LOADING_STATE,
+        payload: { isLoading },
     };
 }
 

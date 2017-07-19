@@ -8,14 +8,16 @@ export const SET_GENDER = 'signup/SET_GENDER';
 export const SET_SSN = 'signup/SET_SSN';
 export const SET_SSN_VALIDITY = 'signup/SET_SSN_VALIDITY';
 export const SET_ADDRESS = 'signup/SET_ADDRESS';
+export const SET_LOADING_STATE = 'signup/SET_LOADING_STATE';
 
 const initialState = {
+    isLoading: false,
+    isSsnValid: false,
     signupStep: c.ENTER_EMAIL,
     signupEmail: '',
     firstName: '',
     lastName: '',
     gender: 'other',
-    isSsnValid: false,
     ssn: '',
     address: {
         name: '',
@@ -34,6 +36,7 @@ export default function reducer(state = initialState, action) {
         case SET_SSN:
         case SET_SSN_VALIDITY:
         case SET_ADDRESS:
+        case SET_LOADING_STATE:
             return Object.assign({}, state, payload);
         default:
             return state;

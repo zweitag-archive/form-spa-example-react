@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 
+import LoadingIndicator from '@/_hoc/LoadingIndicator';
 import * as actions from './_actions';
 import EnterSsn from './EnterSsn';
 
 function mapStateToProps(state) {
     return {
+        isLoading: state.signup.isLoading,
         isSsnValid: state.signup.isSsnValid,
         ssn: state.signup.ssn,
         address: state.signup.address,
@@ -40,4 +42,4 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
     return Object.assign({}, ownProps, stateProps, updatedDispatchProps);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(EnterSsn);
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(LoadingIndicator(EnterSsn));

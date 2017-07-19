@@ -224,7 +224,13 @@ module.exports = {
                 },
                 {
                   loader: require.resolve('sass-loader'),
-                }
+              },
+              {
+                  loader: require.resolve('sass-resources-loader'),
+                  options: {
+                      resources: ['./src/global/_colors.scss'], // add other variables here
+                  },
+              }
               ],
             },
             extractTextPluginOptions
