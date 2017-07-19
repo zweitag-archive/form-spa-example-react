@@ -1,0 +1,16 @@
+@import '../global/colors';
+
+.welcome-link {
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    &:hover {
+        color: $secondaryColor;
+        background-color: $primaryColor;
+    }
+}

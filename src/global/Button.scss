@@ -1,0 +1,19 @@
+@import '../global/colors';
+
+.button {
+    width: 300px;
+    height: 40px;
+    padding: 0;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    background-color: $secondaryColor;
+    cursor: pointer;
+    &:hover {
+        color: $secondaryColor;
+        background-color: $primaryColor;
+    }
+}
