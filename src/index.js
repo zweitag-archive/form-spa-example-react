@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import './global/colors.scss';
 import './global/base.scss';
 
 import App from './app/App.container';
