@@ -7,7 +7,7 @@ import SignupForm from './SignupForm';
 
 import './EnterSsn.scss';
 
-function EnterAddress({ isSsnValid = false, ssn = '', address, onChangeSsn, onSubmit }) {
+function EnterSsn({ isSsnValid = false, ssn = '', address, onChangeSsn, onSubmit }) {
     return (
         <SignupForm onSubmit={onSubmit} preventDefault={true}>
             <p>Please enter your social security number:</p>
@@ -29,7 +29,7 @@ function EnterAddress({ isSsnValid = false, ssn = '', address, onChangeSsn, onSu
     );
 }
 
-EnterAddress.propTypes = {
+EnterSsn.propTypes = {
     isSsnValid: PropTypes.bool,
     ssn: PropTypes.string,
     address: PropTypes.shape({
@@ -40,4 +40,4 @@ EnterAddress.propTypes = {
     onSubmit: PropTypes.func.isRequired,
 };
 
-export default EnterAddress;
+export default EnterSsn;
